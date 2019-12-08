@@ -16,24 +16,14 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to the Mongo DB
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb+srv://user1:parkme-password@parkme-ph6k5.mongodb.net/test?retryWrites=true&w=majority",
-//   {
-//     useCreateIndex: true,
-//     useNewUrlParser: true
-//   }
-// );
-
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://user1:<password>@parkme-ph6k5.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
+//Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://user-one:parkme1-password@ds353378.mlab.com:53378/heroku_m1704t0g",
+  {
+    useCreateIndex: true,
+    useNewUrlParser: true
+  }
+);
 
 
 // Start the API server
